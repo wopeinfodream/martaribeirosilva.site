@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    @font-face {
+      font-family: Gotham Rounded;
+      src: url("font.otf") format("opentype");
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      font-family: Gotham Rounded;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .container {
+      width: 700px;
+      max-width: 90%;
+    }
+    .black {
+      background-color: #2DA8F6;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px 2px;
+    }
+    .answer {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px;
+    }
+    @media (max-width: 991px) {
+      .answer {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: 10px;
+      }
+    }
+    .btn {
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-size: 30px;
+      background-color: #f7ce6a;
+      outline: none;
+      text-decoration: none;
+      color: black;
+    }
+    .black h1 {
+      color: white;
+    }
+    .black p {
+      font-size: 18px;
+      color: white;
+    }
+    .hide {
+      display: none;
+    }
+    .centro {
+      text-align: center;
+    }
+    .progressContainer {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 10px;
+    }
+    #progress {
+      width: 1%;
+      height: 30px;
+      background-color: #337ab7;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body> 
+  <div class="container" style="padding: 10px; border: solid 1px; border-radius: 10px; margin: 20px 0; padding: 0 20px;">
+    <h1 class="centro">RITUAL MATINAL DERRETE GORDURA INDESEJADA DA BARRIGA?</h1>
+    <p>O nutricionista e fitness expert Hugo Oliviera descobriu uma possível causa REAL da atual epidemia de ganho de peso; ele lança uma luz totalmente nova sobre por que é fácil ganhar peso e tão difícil perdê-lo, especialmente quando se segue dietas tradicionais e planos que são impossíveis de seguir.</p>
+    <p>Seu método simples funciona tão bem que a indústria de perda de peso o tem ameaçado desde que ele começou a compartilhar sua solução e chocou o público com os resultados.</p>
+    <p style="font-weight: bold;">Para ver se isso pode funcionar para você, responda ao questionário rápido abaixo:</p>
+    <br>
+    <div class="black">
+      <div id="primeira">
+        <div class="question">
+          <h1 class="centro">Pergunta 1</h1>
+          <p class="centro">Você ou alguém que você conhece trabalha na indústria de dieta ou perda de peso?</p>
+        </div>
+        <div class="answer" style="margin-bottom: 10px;">
+          <button class="btn" onclick="segunda()">SIM</button>
+          <button class="btn" onclick="segunda()">NÃO</button>
+        </div>
+        <button class="btn" onclick="segunda()">NÃO TENHO CERTEZA</button>
+      </div>
+      <div id="segunda" class="hide">
+        <div class="question">
+          <h1 class="centro">Pergunta 2</h1>
+          <p class="centro">Você acredita que SÓ pode perder peso seguindo planos rígidos, cortando calorias e fazendo mais exercícios?</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="terceira()">SIM</button>
+          <button class="btn" onclick="terceira()">NÃO</button>
+        </div>
+      </div>
+      <div id="terceira" class="hide">
+        <div class="question">
+          <h1 class="centro">Pergunta 3</h1>
+          <p class="centro">O vídeo a seguir tem um limite para pouquíssimas pessoas verem ao mesmo tempo... Você pretende ver até o fim?</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="quarta()">SIM</button>
+          <button class="btn" onclick="quarta()">NÃO</button>
+        </div>
+      </div>
+      <div id="quarta" class="hide">
+        <div class="question">
+          <h1 class="centro">Pergunta 4</h1>
+          <p class="centro">Você tem 30 anos ou mais e quer perder 5 quilos ou mais de forma rápida e segura?</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="loading()">SIM</button>
+          <button class="btn" onclick="loading()">NÃO</button>
+        </div>
+      </div>
+      <div id="loading" class="hide centro">
+        <div class="question">
+          <h1>Vaga Reservada com Sucesso!</h1>
+          <p id="carregando">Carregando a aprensentação...</p>
+        </div>
+        <div class="progressContainer">
+          <div id="progress"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <p style="text-align: center; font-weight: bold;">© 2014 - 2021. This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+    <br>
+    <p style="text-align: center; font-weight: bold;"><a href="termos-de-uso.html" style="color: black;">Termos de Uso</a> | <a href="politica-de-privacidade.html" style="color: black;">Política de Privacidade</a></p>
+  </div>
+  <script>
+    function segunda() {
+      document.getElementById("primeira").classList.add("hide")
+      document.getElementById("segunda").classList.remove("hide")
+    }
+    function terceira() {
+      document.getElementById("segunda").classList.add("hide")
+      document.getElementById("terceira").classList.remove("hide")
+    }
+    function quarta() {
+      document.getElementById("terceira").classList.add("hide")
+      document.getElementById("quarta").classList.remove("hide")
+    }
+    function redirect() {
+      location.href = "https://q3soficial.site/v147/"
+    }
+    function loading() {
+      document.getElementById("quarta").classList.add("hide")
+      document.getElementById("loading").classList.remove("hide")
+
+      document.getElementById("progressQuestion").classList.remove("progressQuarta")
+      document.getElementById("progressQuestion").classList.add("progressLoading")
+    }
+    function progress() {
+      var el = document.getElementById("progress")
+      var width = 1
+      var id = setInterval(frame, 10)
+      function frame() {
+        if(width >= 100){
+          clearInterval(id)
+        }else{
+          width++
+          el.style.width = width + "%"
+        }
+      }
+      redirect()
+    }
+  </script>
+</body>
+</html>
